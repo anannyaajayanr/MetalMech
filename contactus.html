@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Metal Mech</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#EFE9E1;
+    color:#322D29;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:#EFE9E1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    border-bottom:1px solid #D1C7BD;
+    z-index:100;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:#322D29;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#322D29;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#72383D;
+}
+
+.hero{
+    height:62vh;
+    background-image:url("Team4.png");
+    background-size:100% auto;
+    background-position:center -140px;
+    background-repeat:no-repeat;
+    background-color:#EFE9E1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(50,45,41,.55);
+}
+
+.hero h1{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:#D9D9D9;
+    font-size:95px;
+    z-index:2;
+    letter-spacing:5px;
+    text-shadow:0 10px 35px rgba(0,0,0,.45);
+    text-align:center;
+    width:100%;
+}
+.contact-section{
+    padding:100px 8%;
+    background:#EFE9E1;
+}
+
+.contact-container{
+    max-width:950px;
+    margin:auto;
+    background:#D1C7BD;
+    border:1px solid #AC9C8D;
+    border-radius:28px;
+    padding:60px;
+    box-shadow:0 24px 60px rgba(50,45,41,.16);
+}
+
+.contact-container h2{
+    font-size:42px;
+    color:#322D29;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.highlight{
+    background:#FFE77A;
+    color:#322D29;
+    font-weight:800;
+    padding:18px 22px;
+    border-radius:16px;
+    line-height:1.8;
+    font-size:19px;
+    margin-bottom:35px;
+    text-align:center;
+    border:1px solid rgba(50,45,41,.18);
+}
+
+.contact-text{
+    color:#72383D;
+    font-size:20px;
+    line-height:1.9;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.contact-details{
+    max-width:760px;
+    margin:30px auto 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.contact-card{
+    background:#EFE9E1;
+    border:1px solid #AC9C8D;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.35s;
+}
+
+.contact-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 45px rgba(50,45,41,.14);
+}
+
+.contact-card h3{
+    color:#322D29;
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.contact-card p,
+.contact-card a{
+    color:#72383D;
+    font-size:17px;
+    line-height:1.8;
+    text-decoration:none;
+}
+
+.contact-card a:hover{
+    color:#322D29;
+}
+
+footer{
+    padding:50px;
+    text-align:center;
+    border-top:1px solid #D1C7BD;
+    color:#72383D;
+}
+
+@media(max-width:900px){
+
+nav{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero{
+    height:50vh;
+    background-size:cover;
+    background-position:center bottom;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.contact-container{
+    padding:40px 25px;
+}
+
+.contact-container h2{
+    font-size:32px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">METAL MECH</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="team.html">Meet Our Team</a></li>
+<li><a href="whatwedo.html">What We Do</a></li>
+<li><a href="logbook.html">Logbook</a></li>
+<li><a href="teachingmaterial.html">Teaching Material</a></li>
+<li><a href="share.html">Share</a></li>
+<li><a href="pastseasons.html">Past Seasons</a></li>
+<li><a href="contactus.html">Contact</a></li>
+<li><a href="communityfeedback.html">Community Feedback</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>CONTACT US</h1>
+
+</section>
+
+<section class="contact-section">
+
+<div class="contact-container">
+
+<h2>Get in Touch</h2>
+
+<p class="highlight">
+We are open to all sponsors or institutions willing to support us this season.
+</p>
+
+<p class="contact-text">
+Do you want to be part of this adventure?<br>
+Get in touch with us:<br><br>
+We’ll be happy to meet you and collaborate with you!
+</p>
+
+<div class="contact-details">
+
+<div class="contact-card">
+    <h3>Email</h3>
+    <p><a href="mailto:teammetalmech@gmail.com">teammetalmech@gmail.com</a></p>
+</div>
+
+<div class="contact-card">
+    <h3>Instagram</h3>
+    <p><a href="https://www.instagram.com/metal.mech.fll_gis/" target="_blank" rel="noopener noreferrer">@metal.mech.fll_gis</a></p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Metal Mech • FIRST LEGO League
+
+</footer>
+
+</body>
+</html>

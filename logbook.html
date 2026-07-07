@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logbook | Metal Mech</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#EFE9E1;
+    color:#322D29;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:#EFE9E1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    border-bottom:1px solid #D1C7BD;
+    z-index:100;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:#322D29;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#322D29;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#72383D;
+}
+
+.hero{
+    height:62vh;
+    background-image:url("Team4.png");
+    background-size:100% auto;
+    background-position:center -140px;
+    background-repeat:no-repeat;
+    background-color:#EFE9E1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(50,45,41,.55);
+}
+
+.hero h1{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:#D9D9D9;
+    font-size:95px;
+    z-index:2;
+    letter-spacing:5px;
+    text-shadow:0 10px 35px rgba(0,0,0,.45);
+    text-align:center;
+    width:100%;
+}
+
+.logbook-section{
+    padding:100px 8%;
+    background:#EFE9E1;
+}
+
+.logbook-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.logbook-description{
+    background:#D1C7BD;
+    border:1px solid #AC9C8D;
+    border-radius:28px;
+    padding:55px;
+    box-shadow:0 24px 60px rgba(50,45,41,.16);
+    margin-bottom:45px;
+    text-align:center;
+}
+
+.logbook-description .eyebrow{
+    display:inline-block;
+    color:#72383D;
+    font-weight:800;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.logbook-description h2{
+    font-size:44px;
+    color:#322D29;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.logbook-description p{
+    color:#72383D;
+    font-size:18px;
+    line-height:1.9;
+    max-width:850px;
+    margin:auto;
+}
+
+.canva-frame-box{
+    background:#D1C7BD;
+    border:1px solid #AC9C8D;
+    border-radius:28px;
+    padding:24px;
+    box-shadow:0 24px 60px rgba(50,45,41,.16);
+}
+
+.canva-embed{
+    position:relative;
+    width:100%;
+    height:0;
+    padding-top:100%;
+    padding-bottom:0;
+    overflow:hidden;
+    border-radius:18px;
+    will-change:transform;
+    background:white;
+}
+
+.canva-embed iframe{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    border:none;
+    padding:0;
+    margin:0;
+}
+
+.canva-link{
+    display:block;
+    text-align:center;
+    margin-top:18px;
+    color:#72383D;
+    font-size:16px;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.canva-link:hover{
+    color:#322D29;
+}
+
+footer{
+    padding:50px;
+    text-align:center;
+    border-top:1px solid #D1C7BD;
+    color:#72383D;
+}
+
+@media(max-width:900px){
+
+nav{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero{
+    height:50vh;
+    background-size:cover;
+    background-position:center bottom;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.logbook-section{
+    padding:70px 5%;
+}
+
+.logbook-description{
+    padding:38px 25px;
+}
+
+.logbook-description h2{
+    font-size:32px;
+}
+
+.canva-frame-box{
+    padding:14px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">METAL MECH</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="team.html">Meet Our Team</a></li>
+<li><a href="whatwedo.html">What We Do</a></li>
+<li><a href="logbook.html">Logbook</a></li>
+<li><a href="teachingmaterial.html">Teaching Material</a></li>
+<li><a href="share.html">Share</a></li>
+<li><a href="pastseasons.html">Past Seasons</a></li>
+<li><a href="contactus.html">Contact</a></li>
+<li><a href="communityfeedback.html">Community Feedback</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>LOGBOOK</h1>
+
+</section>
+
+<section class="logbook-section">
+
+<div class="logbook-container">
+
+<div class="logbook-description">
+
+
+<h2>Our Logbook</h2>
+
+<p>
+Our logbook documents Metal Mech’s journey throughout the season, including competitions, robot design progress, innovation project development, expert feedback, outreach, mentoring, testing, and team reflections. It shows how our ideas developed over time and how each experience helped us improve as a team.
+</p>
+
+</div>
+
+<div class="canva-frame-box">
+
+<div class="canva-embed">
+    <iframe loading="lazy"
+        src="https://www.canva.com/design/DAHOW9-R6mA/KA8cyjXoy447XE8EKeQaXw/view?embed"
+        allowfullscreen="allowfullscreen"
+        allow="fullscreen">
+    </iframe>
+</div>
+
+<a class="canva-link" href="https://www.canva.com/design/DAHOW9-R6mA/KA8cyjXoy447XE8EKeQaXw/view?utm_content=DAHOW9-R6mA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">
+Open Canva Design
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Metal Mech • FIRST LEGO League
+
+</footer>
+
+</body>
+</html>

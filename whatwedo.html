@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What We Do | Metal Mech</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#EFE9E1;
+    color:#322D29;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:#EFE9E1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    border-bottom:1px solid #D1C7BD;
+    z-index:100;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:#322D29;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#322D29;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#72383D;
+}
+
+.hero{
+    height:62vh;
+    background-image:url("Team4.png");
+    background-size:100% auto;
+    background-position:center -140px;
+    background-repeat:no-repeat;
+    background-color:#EFE9E1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(50,45,41,.55);
+}
+
+.hero h1{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:#D9D9D9;
+    font-size:95px;
+    z-index:2;
+    letter-spacing:5px;
+    text-shadow:0 10px 35px rgba(0,0,0,.45);
+    text-align:center;
+    width:100%;
+}
+
+.what-section{
+    padding:100px 8%;
+    background:#EFE9E1;
+}
+
+.what-container{
+    max-width:1050px;
+    margin:auto;
+}
+
+.intro-card{
+    background:#D1C7BD;
+    border:1px solid #AC9C8D;
+    border-radius:28px;
+    padding:60px;
+    box-shadow:0 24px 60px rgba(50,45,41,.16);
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.intro-card .eyebrow{
+    display:inline-block;
+    color:#72383D;
+    font-weight:800;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.intro-card h2{
+    font-size:44px;
+    color:#322D29;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.intro-card p{
+    color:#72383D;
+    font-size:18px;
+    line-height:1.9;
+    max-width:860px;
+    margin:auto;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+
+.info-card{
+    background:#EFE9E1;
+    border:1px solid #AC9C8D;
+    border-radius:24px;
+    padding:38px;
+    box-shadow:0 18px 45px rgba(50,45,41,.12);
+    transition:.35s;
+}
+
+.info-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 25px 60px rgba(50,45,41,.18);
+}
+
+.info-card.dark{
+    background:#322D29;
+}
+
+.info-card.maroon{
+    background:#72383D;
+}
+
+.info-card.beige{
+    background:#D1C7BD;
+}
+
+.info-card h3{
+    font-size:26px;
+    margin-bottom:18px;
+    letter-spacing:1px;
+}
+
+.info-card p{
+    font-size:17px;
+    line-height:1.85;
+}
+
+.info-card.dark h3,
+.info-card.maroon h3{
+    color:#EFE9E1;
+}
+
+.info-card.dark p,
+.info-card.maroon p{
+    color:#D9D9D9;
+}
+
+.info-card.beige h3{
+    color:#322D29;
+}
+
+.info-card.beige p{
+    color:#72383D;
+}
+
+.impact-section{
+    margin-top:45px;
+    background:#D1C7BD;
+    border:1px solid #AC9C8D;
+    border-radius:28px;
+    padding:55px;
+    box-shadow:0 24px 60px rgba(50,45,41,.16);
+}
+
+.impact-section h2{
+    font-size:38px;
+    color:#322D29;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:25px;
+    text-align:center;
+}
+
+.impact-section p{
+    color:#72383D;
+    font-size:18px;
+    line-height:1.9;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+footer{
+    padding:50px;
+    text-align:center;
+    border-top:1px solid #D1C7BD;
+    color:#72383D;
+}
+
+@media(max-width:900px){
+
+nav{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero{
+    height:50vh;
+    background-size:cover;
+    background-position:center bottom;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.what-section{
+    padding:70px 5%;
+}
+
+.intro-card{
+    padding:40px 25px;
+}
+
+.intro-card h2{
+    font-size:32px;
+}
+
+.impact-section{
+    padding:40px 25px;
+}
+
+.impact-section h2{
+    font-size:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">METAL MECH</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="team.html">Meet Our Team</a></li>
+<li><a href="whatwedo.html">What We Do</a></li>
+<li><a href="logbook.html">Logbook</a></li>
+<li><a href="teachingmaterial.html">Teaching Material</a></li>
+<li><a href="share.html">Share</a></li>
+<li><a href="pastseasons.html">Past Seasons</a></li>
+<li><a href="contactus.html">Contact</a></li>
+<li><a href="communityfeedback.html">Community Feedback</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>WHAT WE DO</h1>
+
+</section>
+
+<section class="what-section">
+
+<div class="what-container">
+
+<div class="intro-card">
+
+
+<h2>What We Do</h2>
+
+<p>
+At Metal Mech, we are passionate about using robotics, engineering, and innovation to solve real-world problems. Through the FIRST LEGO League (FLL), we challenge ourselves to think creatively, work collaboratively, and continuously improve our technical and problem-solving skills while making a positive impact in our community.
+</p>
+
+</div>
+
+<div class="info-grid">
+
+<div class="info-card dark">
+    <h3>Robot Game</h3>
+    <p>
+    Each year, we take on a new global challenge that combines robotics, research, and innovation. We design, build, and program autonomous LEGO robots to complete missions.
+    </p>
+</div>
+
+<div class="info-card maroon">
+    <h3>Innovation Project</h3>
+    <p>
+    Alongside the robot game, we research a real-world problem, develop an innovative solution, and present our work to a panel of judges.
+    </p>
+</div>
+
+<div class="info-card beige">
+    <h3>Learning and Collaboration</h3>
+    <p>
+    Throughout the process, we learn from experts, collaborate with teams from around the world, and apply STEM to create meaningful solutions.
+    </p>
+</div>
+
+</div>
+
+<div class="impact-section">
+
+<h2>More Than a Competition</h2>
+
+<p>
+For us, FLL is more than a robotics competition. It is an opportunity to grow as engineers, innovators, and leaders while inspiring others, sharing our knowledge, and showing how teamwork and creativity can make a real difference.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Metal Mech • FIRST LEGO League
+
+</footer>
+
+</body>
+</html>
