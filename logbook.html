@@ -25,6 +25,10 @@ body{
     color:#322D29;
 }
 
+body.menu-open{
+    overflow:hidden;
+}
+
 nav{
     position:sticky;
     top:0;
@@ -35,7 +39,7 @@ nav{
     align-items:center;
     padding:22px 8%;
     border-bottom:1px solid #D1C7BD;
-    z-index:100;
+    z-index:300;
 }
 
 .logo{
@@ -62,6 +66,43 @@ nav a:hover{
     color:#72383D;
 }
 
+.menu-toggle{
+    display:none;
+    width:38px;
+    height:30px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    flex-direction:column;
+    justify-content:space-between;
+    z-index:500;
+}
+
+.menu-toggle span{
+    width:100%;
+    height:3px;
+    background:#322D29;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.menu-toggle.active span:nth-child(1){
+    transform:rotate(45deg) translate(9px, 9px);
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:rotate(-45deg) translate(10px, -10px);
+}
+
+.nav-overlay{
+    display:none;
+}
+
+/* LAPTOP / DESKTOP HERO */
 .hero{
     height:62vh;
     background-image:url("Team4.png");
@@ -73,6 +114,12 @@ nav a:hover{
     justify-content:center;
     align-items:center;
     position:relative;
+    overflow:hidden;
+}
+
+/* Hidden on laptop, used only on phone */
+.hero img{
+    display:none;
 }
 
 .hero::after{
@@ -80,6 +127,7 @@ nav a:hover{
     position:absolute;
     inset:0;
     background:rgba(50,45,41,.55);
+    pointer-events:none;
 }
 
 .hero h1{
@@ -102,7 +150,7 @@ nav a:hover{
 }
 
 .logbook-container{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
 }
 
@@ -114,16 +162,6 @@ nav a:hover{
     box-shadow:0 24px 60px rgba(50,45,41,.16);
     margin-bottom:45px;
     text-align:center;
-}
-
-.logbook-description .eyebrow{
-    display:inline-block;
-    color:#72383D;
-    font-weight:800;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    font-size:13px;
-    margin-bottom:18px;
 }
 
 .logbook-description h2{
@@ -142,7 +180,8 @@ nav a:hover{
     margin:auto;
 }
 
-.canva-frame-box{
+/* PDF SECTION */
+.pdf-frame-box{
     background:#D1C7BD;
     border:1px solid #AC9C8D;
     border-radius:28px;
@@ -150,40 +189,28 @@ nav a:hover{
     box-shadow:0 24px 60px rgba(50,45,41,.16);
 }
 
-.canva-embed{
-    position:relative;
+.pdf-viewer{
     width:100%;
-    height:0;
-    padding-top:100%;
-    padding-bottom:0;
-    overflow:hidden;
-    border-radius:18px;
-    will-change:transform;
-    background:white;
-}
-
-.canva-embed iframe{
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
+    height:900px;
     border:none;
-    padding:0;
-    margin:0;
+    border-radius:18px;
+    background:white;
+    display:block;
 }
 
-.canva-link{
-    display:block;
+.pdf-fallback{
     text-align:center;
     margin-top:18px;
+}
+
+.pdf-fallback a{
     color:#72383D;
     font-size:16px;
     text-decoration:none;
     font-weight:700;
 }
 
-.canva-link:hover{
+.pdf-fallback a:hover{
     color:#322D29;
 }
 
@@ -197,23 +224,90 @@ footer{
 @media(max-width:900px){
 
 nav{
-    flex-direction:column;
-    gap:20px;
+    flex-direction:row;
+    gap:0;
+    padding:18px 6%;
+}
+
+.logo{
+    font-size:22px;
+}
+
+.menu-toggle{
+    display:flex;
 }
 
 nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
+    position:fixed;
+    top:0;
+    right:-310px;
+    width:300px;
+    height:100vh;
+    background:#EFE9E1;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    gap:0;
+    padding:90px 30px 30px;
+    border-left:1px solid #AC9C8D;
+    box-shadow:-20px 0 50px rgba(50,45,41,.22);
+    transition:.35s ease;
+    z-index:400;
 }
 
+nav ul.active{
+    right:0;
+}
+
+nav ul li{
+    width:100%;
+    border-bottom:1px solid #D1C7BD;
+}
+
+nav ul li a{
+    display:block;
+    width:100%;
+    padding:16px 0;
+    font-size:16px;
+    font-weight:600;
+    color:#322D29;
+}
+
+.nav-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(50,45,41,.35);
+    z-index:250;
+}
+
+.nav-overlay.active{
+    display:block;
+}
+
+/* PHONE FIX: show full picture instead of cropped background */
 .hero{
-    height:50vh;
-    background-size:cover;
-    background-position:center bottom;
+    height:auto;
+    background-image:none;
+    display:block;
+    overflow:visible;
+}
+
+.hero img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.hero::after{
+    background:rgba(50,45,41,.25);
 }
 
 .hero h1{
-    font-size:55px;
+    font-size:42px;
+    letter-spacing:3px;
+    line-height:1.1;
+    padding:0 20px;
 }
 
 .logbook-section{
@@ -228,8 +322,12 @@ nav ul{
     font-size:32px;
 }
 
-.canva-frame-box{
+.pdf-frame-box{
     padding:14px;
+}
+
+.pdf-viewer{
+    height:700px;
 }
 
 }
@@ -244,7 +342,13 @@ nav ul{
 
 <div class="logo">METAL MECH</div>
 
-<ul>
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<ul id="navMenu">
 <li><a href="index.html">Home</a></li>
 <li><a href="team.html">Meet Our Team</a></li>
 <li><a href="whatwedo.html">What We Do</a></li>
@@ -258,7 +362,11 @@ nav ul{
 
 </nav>
 
+<div class="nav-overlay" id="navOverlay"></div>
+
 <section class="hero">
+
+<img src="Team4.png" alt="Metal Mech team photo">
 
 <h1>LOGBOOK</h1>
 
@@ -270,7 +378,6 @@ nav ul{
 
 <div class="logbook-description">
 
-
 <h2>Our Logbook</h2>
 
 <p>
@@ -279,19 +386,16 @@ Our logbook documents Metal Mech’s journey throughout the season, including co
 
 </div>
 
-<div class="canva-frame-box">
+<div class="pdf-frame-box">
 
-<div class="canva-embed">
-    <iframe loading="lazy"
-        src="https://www.canva.com/design/DAHOW9-R6mA/KA8cyjXoy447XE8EKeQaXw/view?embed"
-        allowfullscreen="allowfullscreen"
-        allow="fullscreen">
-    </iframe>
+<iframe class="pdf-viewer"
+    src="Logbook.pdf#toolbar=1&navpanes=0&scrollbar=1"
+    title="Metal Mech Logbook PDF">
+</iframe>
+
+<div class="pdf-fallback">
+    <a href="Logbook.pdf" target="_blank" rel="noopener">Open Logbook PDF</a>
 </div>
-
-<a class="canva-link" href="https://www.canva.com/design/DAHOW9-R6mA/KA8cyjXoy447XE8EKeQaXw/view?utm_content=DAHOW9-R6mA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">
-Open Canva Design
-</a>
 
 </div>
 
@@ -304,6 +408,41 @@ Open Canva Design
 © 2026 Metal Mech • FIRST LEGO League
 
 </footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const navOverlay = document.getElementById("navOverlay");
+const navLinks = document.querySelectorAll("#navMenu a");
+
+function openMenu(){
+    menuToggle.classList.add("active");
+    navMenu.classList.add("active");
+    navOverlay.classList.add("active");
+    document.body.classList.add("menu-open");
+}
+
+function closeMenu(){
+    menuToggle.classList.remove("active");
+    navMenu.classList.remove("active");
+    navOverlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
+}
+
+menuToggle.addEventListener("click", function(){
+    if(navMenu.classList.contains("active")){
+        closeMenu();
+    }else{
+        openMenu();
+    }
+});
+
+navOverlay.addEventListener("click", closeMenu);
+
+navLinks.forEach(function(link){
+    link.addEventListener("click", closeMenu);
+});
+</script>
 
 </body>
 </html>
