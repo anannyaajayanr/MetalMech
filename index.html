@@ -62,14 +62,19 @@ nav a:hover{
     color:#72383D;
 }
 
+/* MAIN IMAGE SECTION */
 .hero{
     height:62vh;
-    background-image:url("Team4.png");
-    background-size:100% auto;
-    background-position:center -140px;
-    background-repeat:no-repeat;
-    background-color:#EFE9E1;
+    background:#EFE9E1;
     position:relative;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:auto;
+    display:block;
+    transform:translateY(-140px);
 }
 
 /* Very light overlay so the picture stays clear */
@@ -78,6 +83,7 @@ nav a:hover{
     position:absolute;
     inset:0;
     background:rgba(239,233,225,.08);
+    pointer-events:none;
 }
 
 .page-title{
@@ -198,18 +204,36 @@ nav ul{
     justify-content:center;
 }
 
+/* PHONE FIX: shows the full team picture */
 .hero{
-    height:50vh;
-    background-size:cover;
-    background-position:center bottom;
+    height:auto;
+    overflow:visible;
+}
+
+.hero img{
+    width:100%;
+    height:auto;
+    transform:none;
+}
+
+.hero::after{
+    background:rgba(239,233,225,.03);
 }
 
 .page-title h1{
     font-size:55px;
 }
 
+.about{
+    padding:50px 25px 80px;
+}
+
 .about h2{
     font-size:32px;
+}
+
+.competition-awards{
+    padding:80px 5%;
 }
 
 .competition-awards h2{
@@ -218,6 +242,10 @@ nav ul{
 
 .award-image-space{
     min-height:auto;
+}
+
+.cards{
+    padding:0 5% 80px;
 }
 
 }
@@ -242,14 +270,13 @@ nav ul{
 <li><a href="pastseasons.html">Past Seasons</a></li>
 <li><a href="contactus.html">Contact</a></li>
 <li><a href="communityfeedback.html">Community Feedback</a></li>
-
 </ul>
 
 </nav>
 
-<section class="hero"></section>
-
-
+<section class="hero">
+    <img src="Team4.png" alt="Metal Mech team photo">
+</section>
 
 <section class="about">
 
